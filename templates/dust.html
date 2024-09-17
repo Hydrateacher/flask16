@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Do'stlaringizni kiriting</h1>
+    <form method="post">
+        <label for="friend1">Do'stingiz 1:</label>
+        <input type="text" id="friend1" name="friend1"><br><br>
+
+        <label for="friend2">Do'stingiz 2:</label>
+        <input type="text" id="friend2" name="friend2"><br><br>
+
+        <label for="friend3">Do'stingiz 3:</label>
+        <input type="text" id="friend3" name="friend3"><br><br>
+
+        <label for="friend4">Do'stingiz 4:</label>
+        <input type="text" id="friend4" name="friend4"><br><br>
+
+        <label for="friend5">Do'stingiz 5:</label>
+        <input type="text" id="friend5" name="friend5"><br><br>
+
+        <input type="submit" value="Yuborish">
+    </form>
+
+    {% if friends %}
+        <h2>Sizning do'stlaringiz:</h2>
+        <ul>
+            {% for friend in friends %}
+                <li style="padding: 20px;">{{ friend }}</li>
+                
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
